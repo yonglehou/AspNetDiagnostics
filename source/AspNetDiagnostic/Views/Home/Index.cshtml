@@ -1,0 +1,28 @@
+﻿@using System.Configuration
+@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Diagnostics</title>
+    </head>
+    <body>
+        <div>
+            <table>
+                @foreach (string key in Request.ServerVariables.AllKeys)
+                {
+                    <tr>
+                    <td>@key</td>    
+                    <td>@Request.ServerVariables[key]</td>    
+                    </tr>
+                    
+                }
+            </table>
+        </div>
+    </body>
+</html>
